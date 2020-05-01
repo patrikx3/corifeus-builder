@@ -2,15 +2,21 @@ const exec = require('./replace');
 module.exports = (grunt) => {
 
 
-    grunt.registerTask('cory-replace', function (target) {
+    grunt.registerTask('cory-replace', async function (target) {
 
         const config = grunt.config.get('cory-replace');
         if (target !== undefined) {
             exec(grunt, config[target], this.async());
         } else {
-            Object.keys(config).forEach((git) => {
-                exec(grunt, config[git], this.async());
-            });
+            const done = this.async()
+            try {
+                for(let item of Object.keys(config)) {
+                    await exec(grunt, config[item]);
+                }
+                done()
+            } catch(e) {
+                done(e)
+            }
         }
     })
 }

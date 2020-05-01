@@ -105,7 +105,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**\${pkg.name.toUpperCase()}**](https://pages.corifeus.com/\${git.repo}) Build v\${pkg.version}
+[**\${pkg.name.toUpperCase()}**](https://corifeus.com/\${git.repo}) Build v\${pkg.version}
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
@@ -123,17 +123,17 @@ ${opencollectiveFooter}
     };
 
     let angularVersion = '';
-    let nodeJsInfo = `### Node Version Requirement
+    let nodeJsInfo = `### NodeJs LTS Version Requirement
 \`\`\`
 \${pkg.engines.node}
 \`\`\`
 
-### Built on Node
+### Built on NodeJs
 \`\`\`
 ${process.version}
 \`\`\`
 
-The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required.
+The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required. Only the latest LTS variant is supported.
 
 Install NodeJs:
 https://nodejs.org/en/download/package-manager/`;

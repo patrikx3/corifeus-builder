@@ -6,9 +6,15 @@ module.exports = (grunt) => {
         if (target !== undefined) {
             exec(grunt, config[target], this.async());
         } else {
-            Object.keys(config).forEach((item) => {
-                exec(grunt, config[item], this.async());
-            });
+            const done = this.async()
+            try {
+                Object.keys(config).forEach((item) => {
+                    exec(grunt, config[item]);
+                });
+                done()
+            } catch(e) {
+                done(e)
+            }
         }
     })
 }

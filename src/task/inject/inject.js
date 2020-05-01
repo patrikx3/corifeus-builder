@@ -48,6 +48,8 @@ module.exports = (grunt, inConfig, done) => {
     grunt.log.writeln(`Injected: ${destFile}, Pre: ${config.prefix}, Post: ${config.postfix}`);
     fs.writeFileSync(destFile, data);
 
-    done()
+    if (done) {
+        done()
+    }
 
 };
