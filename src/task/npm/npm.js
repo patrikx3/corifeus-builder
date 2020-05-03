@@ -77,7 +77,7 @@ module.exports = async (pkgFile) => {
     // pkg.engines = { "node" : `>=${process.versions.node}` };
     pkg.engines = {"node": `>=12.13.0`};
 
-    pkg.homepage = `https://corifeus.com/${repo}`;
+    pkg.homepage = `https://corifeus.com/${repo === 'corifeus' ? 'matrix' : repo }`;
 
     pkg.corifeus.nodejs = process.version
     pkg.corifeus.reponame = repo;
