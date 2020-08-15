@@ -55,7 +55,7 @@ module.exports = async function (context) {
                         "--fail",
                         "--location",
                         "--output", appimagetool,
-                        `https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage`,
+                        `https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-x86_64.AppImage`,
                     ],
                 );
                 await exec("chmod", ["+x", appimagetool]);
