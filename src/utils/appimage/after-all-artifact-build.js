@@ -156,7 +156,7 @@ https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/changelog.md#v$
 
     console.log(`
 
-AppImage-s are upgrdaded with the --no-sandbox flag.
+AppImage-s are upgraded with the --no-sandbox flag.
 
 `)
 
