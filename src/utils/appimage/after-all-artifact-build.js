@@ -33,8 +33,8 @@ module.exports = async function (context) {
     const packageDir = 'squashfs-root'
 
 
-    let downloaded = false
-    const appimagetool = 'appimagetool';
+//    let downloaded = false
+//    const appimagetool = 'appimagetool';
 
     const assetsUploads = [
         //   'latest-linux.yml',
@@ -45,6 +45,7 @@ module.exports = async function (context) {
     for(let artifact of context.artifactPaths) {
         if (artifact.toLowerCase().endsWith('appimage')) {
 
+            /*
             if (downloaded === false) {
 
                 // https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-armhf.AppImage - armv7l
@@ -61,13 +62,16 @@ module.exports = async function (context) {
                 await exec("chmod", ["+x", appimagetool]);
                 downloaded = true
             }
+             */
 
-            artifact = artifact.replace(/(\s+)/g, '\\$1')
-            await exec('rm', ['-rf', packageDir])
+            let artifactOriginal = artifact
+//            artifact = artifact.replace(/(\s+)/g, '\\$1')
+//            await exec('rm', ['-rf', packageDir])
 //            await exec('chmod', ['+x', artifact])
 
-            await exec(artifact, ['--appimage-extract'])
+//            await exec(artifact, ['--appimage-extract'])
 
+            /*
             const shFile = path.join(packageDir, "./AppRun");
             const shContentOriginal = fs.readFileSync(shFile).toString();
 
@@ -84,10 +88,16 @@ module.exports = async function (context) {
             }
 
             fs.writeFileSync(shFile, content);
+             */
 
             //  await exec('rm', ['-rf', artifact])
 
             const uploadArtifact = artifact.replace(/ /g, '-')
+
+            //console.log('rename', artifact, uploadArtifact)
+            await fs.copy(artifactOriginal, uploadArtifact)
+
+            /*
             await exec(dirname + '/' + appimagetool, [
                 '-n',
                 '--comp',
@@ -95,16 +105,20 @@ module.exports = async function (context) {
                 packageDir,
                 uploadArtifact,
             ])
+             */
             assetsUploads.unshift(
                 path.basename(uploadArtifact)
             )
         }
     }
+//    console.log('assetsUploads', assetsUploads)
 
+    /*
     await exec('find',[
         `-iname "* *.AppImage"`,
         `-delete`
     ])
+     */
 
     const githubToken = fs.readFileSync(`${originalDir}/secure/token.txt`)
     const GitHub = require('github-api');
@@ -150,13 +164,13 @@ https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/changelog.md#v$
         console.info('curl args', args)
         await exec('curl', args)
     }
-    await exec('rm', ['-rf', packageDir])
+    //  await exec('rm', ['-rf', packageDir])
 
     chdir(originalDir)
 
     console.log(`
 
-AppImage-s are upgraded with the --no-sandbox flag.
+AppImage-s are upgrdaded with the --no-sandbox flag.
 
 `)
 

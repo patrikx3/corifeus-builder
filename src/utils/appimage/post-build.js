@@ -31,10 +31,15 @@ const run = async() => {
 
 
     const assetsUploads = [
-          'latest-linux.yml',
-          'latest-linux-ia32.yml',
+        'latest-linux.yml',
+        'latest-linux-ia32.yml',
     ]
 
+    await exec('find',[
+        `./dist`,
+        `-iname "* *.AppImage"`,
+        `-delete`
+    ])
 
     const upload_url = releases.data[0].upload_url.replace('{?name,label}', '')
 
@@ -79,7 +84,7 @@ const run = async() => {
 
     console.log(`
 
-YAMLs uploaded.        
+YAMLs uploaded.
 
 `)
 
