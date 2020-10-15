@@ -35,11 +35,6 @@ const run = async() => {
         'latest-linux-ia32.yml',
     ]
 
-    await exec('find',[
-        `./dist`,
-        `-iname "* *.AppImage"`,
-        `-delete`
-    ])
 
     const upload_url = releases.data[0].upload_url.replace('{?name,label}', '')
 

@@ -3,6 +3,8 @@ const folder = require('./config/folder/index');
 const _ = require('lodash');
 const utils = require('corifeus-utils');
 const fs = require('fs');
+const path = require('path')
+const fsPromise = require('fs').promises
 
 class loader {
     constructor(grunt) {
@@ -93,6 +95,26 @@ class loader {
                 case 'js':
                     grunt.task.run(config.task.run.js);
                     break;
+            }
+        });
+
+        grunt.registerTask('cory-angular-hook-lib', async function () {
+            const done = this.async();
+
+            try {
+                const rootPkgName = require(`${process.cwd()}/package.json`)
+                const pkgName = path.resolve(`./projects/${rootPkgName.corifeus.reponame}/package.json`)
+
+                let pkg = require(pkgName)
+                pkg.name = rootPkgName.name
+                pkg.corifeus = {
+                    install: false
+                }
+                const data = JSON.stringify(pkg, null, 4)
+                await fsPromise.writeFile(pkgName, data)
+                done()
+            } catch (e) {
+                done(e)
             }
         });
 
