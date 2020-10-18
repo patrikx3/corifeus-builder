@@ -24,48 +24,8 @@ module.exports = (grunt) => {
                 folder.build.root
             ]
         },
-        watch: {
-            'cory-wait': {
-                options: {
-                    reload: false
-                },
-                files: folder.files.all,
-                tasks: []
-            },
-            'cory-js-all': {
-                options: {
-                    reload: true
-                },
-                files: folder.files.all,
-                tasks: task.watch.jsAll
-            },
-            'cory-js-test': {
-                options: {
-                    reload: true
-                },
-                files: folder.files.all,
-                tasks: task.watch.jsTest
-            },
-            /*
-            'cory-js-doc': {
-                files: folder.files.all,
-                tasks: task.watch.doc
-            },
-            */
-        },
-        /*
-         jsdoc: {
-         'cory-dist': {
-         src: folder.files.doc,
-         options: {
-         destination: folder.build.jsdoc.root,
-         template : "node_modules/ink-docstrap/template",
-         configure : "node_modules/ink-docstrap/template/jsdoc.conf.json",
-         plugins: ["node_modules/jsdoc-strip-async-await"]
-         }
-         }
-         },
-         */
+
+
     }
 
 

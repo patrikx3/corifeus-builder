@@ -7,7 +7,6 @@ const folderBin = 'bin/';
 const folderSrc = 'src/';
 
 const folderTest = 'test/';
-const folderTestAngular = folderTest + 'angular-webpack/';
 
 const folderFilesAll = [
     'Gruntfile.js',
@@ -49,8 +48,6 @@ module.exports = {
     },
     test: {
         root: folderTest,
-        angularWebpack: {
-            root: folderTestAngular
-        },
+
     }
 };

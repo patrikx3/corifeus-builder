@@ -67,37 +67,6 @@ class loader {
         })
 
 
-        grunt.registerTask('cory-test', (target) => {
-            switch (target) {
-
-                case 'angular-protractor':
-                    grunt.task.run([
-                        'connect:cory-angular',
-                        'protractor:cory-angular-chrome',
-
-                    ]);
-                    break;
-
-                case 'angular-karma':
-                    grunt.task.run([
-                        'karma:cory-angular-run',
-                        'watch:cory-angular-karma'
-                    ]);
-                    break;
-            }
-        });
-        grunt.registerTask('cory-build-run', (target) => {
-            switch (target) {
-                case 'angular':
-                    grunt.task.run(config.task.run.angular);
-                    break;
-
-                case 'js':
-                    grunt.task.run(config.task.run.js);
-                    break;
-            }
-        });
-
         grunt.registerTask('cory-angular-hook-lib', async function () {
             const done = this.async();
 
@@ -138,12 +107,6 @@ class loader {
         options = options || {};
         options.empty = true;
         this.load(options);
-    }
-
-    ts(options) {
-        options = options || {};
-        options.config = _.merge(require('./config/grunt/ts/index')(), options.config || {}),
-            this.load(options);
     }
 
 
