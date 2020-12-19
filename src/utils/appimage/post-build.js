@@ -32,7 +32,7 @@ const run = async() => {
 
     const assetsUploads = [
         'latest-linux.yml',
-        'latest-linux-ia32.yml',
+  //      'latest-linux-ia32.yml',
     ]
 
 

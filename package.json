@@ -1,11 +1,11 @@
 {
     "name": "corifeus-builder",
-    "version": "2020.10.148",
+    "version": "2020.10.153",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
         "publish": true,
-        "nodejs": "v14.15.1",
+        "nodejs": "v14.15.3",
         "reponame": "corifeus-builder",
         "opencollective": false,
         "build": true
@@ -33,7 +33,7 @@
     },
     "homepage": "https://corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^2020.10.139",
+        "corifeus-utils": "^2020.10.142",
         "download": "^8.0.0",
         "escape-string-regexp": "^4.0.0",
         "extract-zip": "^2.0.1",
@@ -48,8 +48,8 @@
         "lodash": "^4.17.20",
         "mocha": "^8.2.1",
         "mz": "^2.7.0",
-        "npm": "^6.14.9",
-        "npm-check-updates": "^10.2.2",
+        "npm": "^6.14.10",
+        "npm-check-updates": "^10.2.5",
         "should": "^13.2.3",
         "time-grunt": "^2.0.0",
         "yaml": "^1.10.0"
