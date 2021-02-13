@@ -167,10 +167,21 @@ ${angularPkg.version}
     let build = commonBuild
 
     // https://api.travis-ci.com/patrikx3/redis-ui-material.svg?branch=master
+    /*
     build += hideBuild ? '' : `[![Build Status](https://api.travis-ci.com/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.com/patrikx3/\${git.repo})
 [![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
 
 `
+
+
+     */
+
+    // https://github.com/patrikx3/onenote/workflows/nodejs/badge.svg
+    build += hideBuild ? '' : `[![Build Status](https://github.com/patrikx3/\${git.repo}/workflows/nodejs/badge.svg)](https://github.com/patrikx3/\${git.repo}/actions?query=workflow%3Anodejs)
+[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
+
+`
+
 
     build += opencollectiveHeader
 
