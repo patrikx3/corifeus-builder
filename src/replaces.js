@@ -169,7 +169,7 @@ ${angularPkg.version}
     // https://api.travis-ci.com/patrikx3/redis-ui-material.svg?branch=master
     /*
     build += hideBuild ? '' : `[![Build Status](https://api.travis-ci.com/patrikx3/\${git.repo}.svg?branch=master)](https://travis-ci.com/patrikx3/\${git.repo})
-[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
+[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://stats.uptimerobot.com/9ggnzcWrw)
 
 `
 
@@ -178,7 +178,7 @@ ${angularPkg.version}
 
     // https://github.com/patrikx3/onenote/workflows/build/badge.svg
     build += hideBuild ? '' : `[![Build Status](https://github.com/patrikx3/\${git.repo}/workflows/build/badge.svg)](https://github.com/patrikx3/\${git.repo}/actions?query=workflow%3Abuild)
-[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
+[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://stats.uptimerobot.com/9ggnzcWrw)
 
 `
 
@@ -278,7 +278,7 @@ ${nodeVersion}
                 `
                 */
                 nonEmptyBuild = `[![Build Status](https://github.com/patrikx3/\${git.repo}/workflows/build/badge.svg)](https://github.com/patrikx3/\${git.repo}/actions?query=workflow%3Abuild)
-[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
+[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://stats.uptimerobot.com/9ggnzcWrw)
 
 # \${pkg.description}
 
