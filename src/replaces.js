@@ -133,10 +133,8 @@ ${opencollectiveFooter}
 ${process.version}
 \`\`\`
 
-The \`\`\`async\`\`\` and \`\`\`await\`\`\` keywords are required. Only the latest LTS variant is supported.
-
-Install NodeJs:
-https://nodejs.org/en/download/package-manager/`;
+Only the latest LTS variant is supported.
+`;
 
     if (options.replacer.hasOwnProperty('nodejsinfo') && options.replacer.nodejsinfo === false) {
         nodeJsInfo = '';

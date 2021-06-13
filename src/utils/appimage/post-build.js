@@ -14,7 +14,7 @@ const run = async() => {
 
     const dirname = originalDir + '/' + 'dist'
 
-    const githubToken = fs.readFileSync(`${originalDir}/secure/token.txt`)
+    const githubToken = fs.readFileSync(`${originalDir}/secure/token.txt`).toString().trim()
     const GitHub = require('github-api');
     var gh = new GitHub({
         username: 'p3x-robot',

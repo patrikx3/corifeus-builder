@@ -12,7 +12,7 @@ class loader {
 
         this.configJit = {
 //            jshint: 'grunt-contrib-jshint',
-
+            'htmlmin': 'grunt-contrib-htmlmin',
             clean: 'grunt-contrib-clean',
             watch: 'grunt-contrib-watch',
 //            jsdoc: 'grunt-contrib-jsdoc',
