@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/corifeus-builder.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/corifeus-builder/)
 ---
-# 🏗️ Corifeus Builder v2021.10.102
+# 🏗️ Corifeus Builder v2021.10.106
 
 
 
@@ -24,7 +24,7 @@
 
 ### Built on NodeJs
 ```txt
-v14.17.2
+v14.17.6
 ```
 
 Only the latest LTS variant is supported.
@@ -127,7 +127,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**CORIFEUS-BUILDER**](https://corifeus.com/corifeus-builder) Build v2021.10.102
+[**CORIFEUS-BUILDER**](https://corifeus.com/corifeus-builder) Build v2021.10.106
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

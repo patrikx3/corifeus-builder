@@ -4,7 +4,7 @@ const path = require('path')
 
 const exec = require('./lib').exec
 
-const escapeStringRegexp = require('escape-string-regexp');
+const escapeStringRegexp = require('../escape-string-regexp');
 
 module.exports = async function (context) {
 
