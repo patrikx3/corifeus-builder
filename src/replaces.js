@@ -123,7 +123,7 @@ ${opencollectiveFooter}
     };
 
     let angularVersion = '';
-    let nodeJsInfo = `### NodeJs LTS Version Requirement
+    let nodeJsInfo = `### Version requirement
 \`\`\`txt
 \${pkg.engines.node}
 \`\`\`
@@ -133,7 +133,6 @@ ${opencollectiveFooter}
 ${process.version}
 \`\`\`
 
-Only the latest LTS variant is supported.
 `;
 
     if (options.replacer.hasOwnProperty('nodejsinfo') && options.replacer.nodejsinfo === false) {
