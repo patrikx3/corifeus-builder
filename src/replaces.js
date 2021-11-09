@@ -123,12 +123,7 @@ ${opencollectiveFooter}
     };
 
     let angularVersion = '';
-    let nodeJsInfo = `### NodeJs version requirement
-\`\`\`txt
-\${pkg.engines.node}
-\`\`\`
-
-### Built on NodeJs
+    let nodeJsInfo = `### Built and supported on NodeJs version
 \`\`\`txt
 ${process.version}
 \`\`\`
