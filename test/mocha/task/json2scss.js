@@ -2,7 +2,7 @@ const should = require('should');
 const exec = require('../../../src/task/json2scss/json2scss');
 
 const fs = require('fs');
-const mkdirp = require('mkdirp');
+const { mkdirp } = require('mkdirp')
 const grunt = require('grunt');
 
 describe('src/task/json2scss', () => {

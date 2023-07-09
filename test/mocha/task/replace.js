@@ -4,7 +4,7 @@ const exec = require('../../../src/task/replace/replace');
 const fs = require('mz/fs');
 const process = require('process');
 const path = require('path');
-const mkdirp = require('mkdirp');
+const { mkdirp } = require('mkdirp')
 const grunt = require('grunt');
 
 describe('src/task/replace', () => {
