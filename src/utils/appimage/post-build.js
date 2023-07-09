@@ -1,10 +1,11 @@
 const fs = require('fs-extra')
 const exec = require('./lib').exec
-const globby = require('globby')
 const yaml = require('yaml')
 const sha512 = require('./lib').sha512
 
 const run = async() => {
+
+    const { globby } = await import('globby') 
 
     if (process.env.hasOwnProperty('TRAVIS')) {
         return
