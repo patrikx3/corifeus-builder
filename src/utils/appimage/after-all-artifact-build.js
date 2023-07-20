@@ -12,7 +12,7 @@ module.exports = async function (context) {
         return
     }
 
-    if (!context.artifactPaths[0].toLowerCase().endsWith('appimage')) {
+    if (!context.artifactPaths[0].toLowerCase().endsWith('appimage') && !context.artifactPaths[0].toLowerCase().endsWith('deb')) {
         return;
     }
 
@@ -25,22 +25,21 @@ module.exports = async function (context) {
     }
 
     //console.log(context)
+
     const originalDir = process.cwd()
 
     const dirname = context.outDir
     chdir(dirname)
 
-    const packageDir = 'squashfs-root'
+    //const packageDir = 'squashfs-root'
 
 
     let downloaded = false
     const appimagetool = 'appimagetool';
 
-    const assetsUploads = [
-        //   'latest-linux.yml',
-        //   'latest-linux-ia32.yml',
-    ]
+    const assetsUploads = context.artifactPaths
 
+    /*
 
     for(let artifact of context.artifactPaths) {
         if (artifact.toLowerCase().endsWith('appimage')) {
@@ -105,7 +104,7 @@ module.exports = async function (context) {
         `-iname "* *.AppImage"`,
         `-delete`
     ])
-
+    */
     const githubToken = fs.readFileSync(`${originalDir}/secure/token.txt`).toString().trim()
     const GitHub = require('github-api');
     var gh = new GitHub({
@@ -131,12 +130,17 @@ https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/change-log.md#v
     })
 
     const upload_url = result.data.upload_url.replace('{?name,label}', '')
+
+
+    fs.writeFileSync(`${originalDir}/secure/upload-url.txt`, upload_url)
+
 ///    console.log('results', result)
 
     for (let uploadAsset of assetsUploads) {
+        uploadAsset = path.basename(uploadAsset)
         const args = [
             `--request POST`,
-            `--data-binary @${dirname + '/' + uploadAsset}`,
+            `--data-binary @"${dirname + '/' + uploadAsset}"`,
             `-H "Authorization: token ${githubToken}"`,
             `-H "Content-Type: application/octet-stream"`,
             `${upload_url}?name=${uploadAsset}`,
@@ -150,7 +154,7 @@ https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/change-log.md#v
         console.info('curl args', args)
         await exec('curl', args)
     }
-    await exec('rm', ['-rf', packageDir])
+    //await exec('rm', ['-rf', packageDir])
 
     chdir(originalDir)
 

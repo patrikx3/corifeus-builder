@@ -5,7 +5,7 @@ const sha512 = require('./lib').sha512
 
 const run = async() => {
 
-    const { globby } = await import('globby') 
+    const glob = require('glob')
 
     if (process.env.hasOwnProperty('TRAVIS')) {
         return
@@ -41,8 +41,15 @@ const run = async() => {
 
     for (let uploadAsset of assetsUploads) {
 
-        const files = await globby('./dist/*.AppImage')
+        const files = glob.sync(
+            [
+                './dist/*.AppImage',
+            //    './dist/*.deb',
+            //    './dist/*.rpm'
+            ]
+        )
 
+        
         for (let file of files) {
             let ymlFile
 
