@@ -168,8 +168,7 @@ ${angularPkg.version}
      */
 
     // https://github.com/patrikx3/onenote/workflows/build/badge.svg
-    build += hideBuild ? '' : `[![Build Status](https://github.com/patrikx3/\${git.repo}/workflows/build/badge.svg)](https://github.com/patrikx3/\${git.repo}/actions?query=workflow%3Abuild)
-[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://stats.uptimerobot.com/9ggnzcWrw)
+    build += hideBuild ? '' : `[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://stats.uptimerobot.com/9ggnzcWrw)
 
 `
 
