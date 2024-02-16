@@ -322,6 +322,7 @@ ${nodeVersion}
             throw new Error(`unknown replacer ${options.replacer}`)
     }
 
+    /*
     if (options.replacer.hasOwnProperty('npmio') && options.replacer.npmio === true && options.config['cory-replace'].hasOwnProperty('headerMain')) {
         const replace = options.config['cory-replace'].headerMain.replace;
 
@@ -331,5 +332,6 @@ ${nodeVersion}
 [![NPM](https://nodei.co/npm-dl/\${pkg.name}.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/\${pkg.name}/)
 ` + append
     }
+    */
 
 }

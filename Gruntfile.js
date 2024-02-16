@@ -5,11 +5,7 @@ module.exports = (grunt) => {
     const mz = require('mz');
 
     const loader = new builder.loader(grunt);
-    loader.js({
-        replacer: {
-            npmio: true
-        }
-    });
+    loader.js({});
 
     grunt.registerTask('generate-folder', 'Generate the actual files'  , function(target) {
         const folder = builder.config.folder;
