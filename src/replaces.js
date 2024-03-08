@@ -11,9 +11,14 @@ module.exports = (options, pkg) => {
     }
 
 
-    const commonBuild = `
+    let commonBuild = `[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)  `
 
-[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)  `
+
+    if (pkg.corifeus && pkg.corifeus.publish === true) {
+        // ![https://www.npmjs.com/package/${pkg.name}](https://img.shields.io/npm/v/${pkg.name}.svg)
+        commonBuild = `[![NPM](https://img.shields.io/npm/v/${pkg.name}.svg)](https://www.npmjs.com/package/${pkg.name})  ` + commonBuild
+
+    }
 
     let opencollectiveHeader = ''
     let opencollectiveFooter = ''
