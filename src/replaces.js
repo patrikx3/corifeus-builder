@@ -108,16 +108,26 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
         replace: `
 ---
 
-🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
 
-Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
+## Support Our Open-Source Project ❤️
+If you appreciate our work, consider starring this repository or making a donation to support server maintenance and ongoing development. Your support means the world to us—thank you!
 
-All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
+### Server Availability
+Our server may occasionally be down, but please be patient. Typically, it will be back online within 15-30 minutes. We appreciate your understanding.
 
-**Note about versioning:** Versions are cut in Major.Minor.Patch schema. Major is always the current year. Minor is either 4 (January - June) or 10 (July - December). Patch is incremental by every build. If there is a breaking change, it should be noted in the readme.
+### About My Domains
+All my domains, including [patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.
 
+### Versioning Policy
+**Version Structure:** We follow a Major.Minor.Patch versioning scheme:
+- **Major:** Corresponds to the current year.
+- **Minor:** Set as 4 for releases from January to June, and 10 for July to December.
+- **Patch:** Incremental, updated with each build.
+
+**Important Changes:** Any breaking changes are prominently noted in the readme to keep you informed.
 
 ---
+
 
 [**\${pkg.name.toUpperCase()}**](https://corifeus.com/\${git.repo === 'corifeus' ? 'matrix' : git.repo}) Build v\${pkg.version}
 
