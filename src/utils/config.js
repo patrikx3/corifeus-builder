@@ -1,5 +1,5 @@
 const config = {
-    ecma: 2023
+    ecma: 2024
 }
 
 module.exports.config = config
