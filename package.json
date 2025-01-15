@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "2025.4.120",
+    "version": "2025.4.124",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
@@ -33,10 +33,10 @@
     },
     "homepage": "https://corifeus.com/corifeus-builder",
     "dependencies": {
-        "corifeus-utils": "^2025.4.113",
+        "corifeus-utils": "^2025.4.117",
         "download": "^8.0.0",
         "extract-zip": "^2.0.1",
-        "fs-extra": "^11.2.0",
+        "fs-extra": "^11.3.0",
         "github-api": "^3.4.0",
         "glob": "^8.0.3",
         "glob-promise": "^6.0.7",

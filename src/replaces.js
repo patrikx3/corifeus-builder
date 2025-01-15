@@ -133,13 +133,8 @@ If you appreciate our work, consider ⭐ starring this repository or 💰 making
 
 ---
 
-### 🖥️ Server Availability  
-Our server may occasionally be down, but please be patient. Typically, it will be back online within 15-30 minutes. We appreciate your understanding.  
-
----
-
 ### 🌍 About My Domains  
-All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.hu](https://corifeus.hu), and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.  
+All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](https://corifeus.eu), and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.  
 
 ---
 

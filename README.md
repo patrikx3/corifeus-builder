@@ -5,7 +5,7 @@
 
 
 ---
-# 🏗️ Corifeus Builder v2025.4.120
+# 🏗️ Corifeus Builder v2025.4.124
 
 
   
@@ -139,13 +139,8 @@ If you appreciate our work, consider ⭐ starring this repository or 💰 making
 
 ---
 
-### 🖥️ Server Availability  
-Our server may occasionally be down, but please be patient. Typically, it will be back online within 15-30 minutes. We appreciate your understanding.  
-
----
-
 ### 🌍 About My Domains  
-All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.hu](https://corifeus.hu), and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.  
+All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](https://corifeus.eu), and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.  
 
 ---
 
@@ -160,7 +155,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.hu](ht
 ---
 
 
-[**CORIFEUS-BUILDER**](https://corifeus.com/corifeus-builder) Build v2025.4.120
+[**CORIFEUS-BUILDER**](https://corifeus.com/corifeus-builder) Build v2025.4.124
 
  [![NPM](https://img.shields.io/npm/v/corifeus-builder.svg)](https://www.npmjs.com/package/corifeus-builder)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
