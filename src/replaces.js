@@ -111,7 +111,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## Quick and Affordable Web Development Services
 
-If you want to quickly and affordably develop your next digital project, visit [corifeus.hu](https://corifeus.hu) for expert solutions tailored to your needs.
+If you want to quickly and affordably develop your next digital project, visit [corifeus.eu](https://corifeus.eu) for expert solutions tailored to your needs.
 
 ---
 
