@@ -753,10 +753,10 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-corifeus-utils@^2025.4.117:
-  version "2025.4.117"
-  resolved "https://registry.yarnpkg.com/corifeus-utils/-/corifeus-utils-2025.4.117.tgz#363f46911a4472a401e9b9b1be2b558cfbebebd9"
-  integrity sha512-GrZrHQprSxr0//Psq/3HsF5bdoWZ2gqjFFBugKvxe9rhbC+3jyL4k4tQcKDZDxGBahSJT+1egNckG52c85Wk1w==
+corifeus-utils@^2025.4.120:
+  version "2025.4.120"
+  resolved "https://registry.yarnpkg.com/corifeus-utils/-/corifeus-utils-2025.4.120.tgz#3e2b54d42f35bf57c3c0700c289ae55fd15455eb"
+  integrity sha512-Plv0NcZDIoYT2OsxzF47grWaOEGFWph3vIiPSt5gDTkqlTZ/Wy5+EneeYTzMlpMKsNrNKtAcwM98dAtmLoFg4g==
   dependencies:
     fs-extra "^11.3.0"
     ms "^2.1.3"
@@ -2487,10 +2487,10 @@ npm-bundled@^4.0.0:
   dependencies:
     npm-normalize-package-bin "^4.0.0"
 
-npm-check-updates@^17.1.13:
-  version "17.1.13"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-17.1.13.tgz#93e1c5fa5b8e11bca0bd143650b14ffcf9fc6b5a"
-  integrity sha512-m9Woo2J5XVab0VcQpYvrQ0hx3ySI1mGbiHR595mc6Lr1/FIaTWvv+oU+T1WKSfXRiluKC/V5P6Bdk5agaYpqqg==
+npm-check-updates@^17.1.14:
+  version "17.1.14"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-17.1.14.tgz#68285d98b296656bf7a8f747123c51d1adbdbb2b"
+  integrity sha512-dr4bXIxETubLI1tFGeock5hN8yVjahvaVpx+lPO4/O2md3zJuxB7FgH3MIoTvQSCgsgkIRpe0skti01IEAA5tA==
 
 npm-install-checks@^7.1.0, npm-install-checks@^7.1.1:
   version "7.1.1"
