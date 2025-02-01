@@ -11,7 +11,7 @@ module.exports = (options, pkg) => {
     }
 
 
-    let commonBuild = `[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)  `
+    let commonBuild = `[![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)  `
 
 
     if (pkg.corifeus && pkg.corifeus.publish === true) {
@@ -20,57 +20,6 @@ module.exports = (options, pkg) => {
 
     }
 
-    let opencollectiveHeader = ''
-    let opencollectiveFooter = ''
-    pkg.corifeus.opencollective = false;
-    if (options.replacer.hasOwnProperty('opencollective') && options.replacer.opencollective === true) {
-        pkg.corifeus.opencollective = true;
-
-        pkg.collective = {
-            type: "opencollective",
-            url: `https://opencollective.com/${pkg.name}`
-        }
-
-        opencollectiveHeader = ` [![Backers on Open Collective](https://opencollective.com/\${pkg.name}/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/\${pkg.name}/sponsors/badge.svg)](#sponsors)`
-        opencollectiveFooter = `
-
-# Open collective
-
-## Contributors
-
-This project exists thanks to all the people who contribute.
-
-<a href="https://github.com/patrikx3/\${pkg.corifeus.reponame}/graphs/contributors"><img src="https://opencollective.com/\${pkg.name}/contributors.svg?width=890&button=false" /></a>
-
-
-## Backers
-
-Thank you to all our backers!
-
-🙏 [Become a backer](https://opencollective.com/\${pkg.name}#backer)
-
-<a href="https://opencollective.com/\${pkg.name}#backers" target="_blank"><img src="https://opencollective.com/\${pkg.name}/backers.svg?width=890"></a>
-
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-🙏 [Become a sponsor](https://opencollective.com/\${pkg.name}#sponsor)
-
-<a href="https://opencollective.com/\${pkg.name}/sponsor/0/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/1/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/2/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/3/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/4/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/5/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/6/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/7/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/8/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/\${pkg.name}/sponsor/9/website" target="_blank"><img src="https://opencollective.com/\${pkg.name}/sponsor/9/avatar.svg"></a>
-
-`
-    }
 
     const replaceFiles = [
         'artifacts/**/*.md',
@@ -151,12 +100,11 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 
 [**\${pkg.name.toUpperCase()}**](https://corifeus.com/\${git.repo === 'corifeus' ? 'matrix' : git.repo}) Build v\${pkg.version}
 
- ${defaultFooterNpm}[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
+ ${defaultFooterNpm}[![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
 
 
 
-${opencollectiveFooter}
 `,
         files: replaceFiles
     };
@@ -218,7 +166,7 @@ ${angularPkg.version}
 `
 
 
-    build += opencollectiveHeader
+    //build += opencollectiveHeader
 
     // below is to add additional status
     const domainInfo = `
