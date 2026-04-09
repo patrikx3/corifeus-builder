@@ -1,4 +1,5 @@
 const fs = require('fs').promises;
+const path = require('path');
 const git = require('../../git');
 
 module.exports = async (pkgFile) => {
@@ -86,8 +87,8 @@ module.exports = async (pkgFile) => {
     await fs.writeFile(pkgFile, newPkgFile)
 
     // Auto-ensure .npmignore protects sensitive directories
-    const cwd = require('path').dirname(pkgFile)
-    const npmignorePath = require('path').join(cwd, '.npmignore')
+    const cwd = path.dirname(pkgFile)
+    const npmignorePath = path.join(cwd, '.npmignore')
     const protectedDirs = ['secure/', 'agents/', '.claude/', '.vscode/', '.codex/']
     const existingDirs = []
     for (const dir of protectedDirs) {

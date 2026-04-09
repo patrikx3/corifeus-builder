@@ -66,10 +66,6 @@ const getCommitForVersion = (repoDir, version) => {
 
 /**
  * Collect git logs from multiple repos.
- *
- * @param {Object} options
- * @param {string} options.cwd - project root
- * @param {Array<{dir: string, npmName?: string}>} [options.repos] - workspace repos (defaults to single repo)
  */
 const collectLogs = async (options) => {
     const { cwd, repos } = options
@@ -130,19 +126,112 @@ const collectLogs = async (options) => {
 }
 
 /**
+ * Archive previous year entries from change-log.md into change-log.YYYY.md
+ * Only runs when the current year differs from the year of existing entries.
+ */
+const archivePreviousYear = async (changelogPath, cwd) => {
+    const currentYear = new Date().getFullYear()
+
+    let changelog
+    try {
+        changelog = await fs.readFile(changelogPath, 'utf-8')
+    } catch (e) {
+        return
+    }
+
+    // Find all version entries with their years (format: ### vYYYY.M.P)
+    const entryRegex = /### v(\d{4})\.\d+\.\d+/g
+    const years = new Set()
+    let match
+    while ((match = entryRegex.exec(changelog)) !== null) {
+        years.add(parseInt(match[1]))
+    }
+
+    // Find years that are not the current year and need archiving
+    for (const year of years) {
+        if (year >= currentYear) continue
+
+        const archivePath = path.resolve(cwd, `change-log.${year}.md`)
+        try {
+            await fs.access(archivePath)
+            // Archive already exists, skip
+            continue
+        } catch (e) {}
+
+        // Extract entries for this year
+        const yearEntries = []
+        const allEntriesRegex = /### v(\d{4}\.\d+\.\d+)\n([\s\S]*?)(?=\n### v|\n\[\/\/\]|$)/g
+        let entryMatch
+        while ((entryMatch = allEntriesRegex.exec(changelog)) !== null) {
+            const entryYear = parseInt(entryMatch[1].split('.')[0])
+            if (entryYear === year) {
+                yearEntries.push(`### v${entryMatch[1]}\n${entryMatch[2].trimEnd()}`)
+            }
+        }
+
+        if (yearEntries.length === 0) continue
+
+        // Write archive file
+        const archiveContent = yearEntries.join('\n\n') + '\n'
+        await fs.writeFile(archivePath, archiveContent)
+        console.log(`Archived ${yearEntries.length} entries from ${year} to change-log.${year}.md`)
+
+        // Remove archived entries from main changelog
+        for (const entry of yearEntries) {
+            const escapedHeader = entry.split('\n')[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+            const removeRegex = new RegExp(`\\n?${escapedHeader}\\n[\\s\\S]*?(?=\\n### v|\\n\\[\/\/\\]|$)`)
+            changelog = changelog.replace(removeRegex, '')
+        }
+
+        await fs.writeFile(changelogPath, changelog)
+
+        // Git add the archive
+        try {
+            execSync(`git add change-log.${year}.md`, { cwd, stdio: 'inherit' })
+        } catch (e) {}
+    }
+}
+
+/**
+ * Auto-create change-log.md if it doesn't exist.
+ */
+const ensureChangelog = async (changelogPath, projectName) => {
+    try {
+        await fs.access(changelogPath)
+    } catch (e) {
+        const content = `[//]: #@corifeus-header
+
+# ${projectName}
+
+
+[//]: #@corifeus-header:end
+`
+        await fs.writeFile(changelogPath, content)
+        console.log(`Created change-log.md for ${projectName}`)
+    }
+}
+
+/**
  * Generate changelog entry using Claude AI and update change-log.md
  *
  * @param {Object} options
  * @param {string} options.cwd - project root
  * @param {string} options.projectName - e.g. "P3X Network MCP" or "P3X Redis UI"
  * @param {Array<{dir: string, npmName?: string}>} [options.repos] - workspace repos
+ * @param {boolean} [options.skipCommit] - skip git commit (useful when called from grunt)
  */
 const generateChangelog = async (options) => {
-    const { cwd, projectName, repos } = options
+    const { cwd, projectName, repos, skipCommit } = options
     const pkg = JSON.parse(await fs.readFile(path.resolve(cwd, 'package.json'), 'utf-8'))
     const version = pkg.version
     const today = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })
     const changelogPath = path.resolve(cwd, 'change-log.md')
+
+    // Auto-create change-log.md if missing
+    await ensureChangelog(changelogPath, projectName || pkg.description || pkg.name)
+
+    // Archive previous year entries
+    await archivePreviousYear(changelogPath, cwd)
 
     const logs = await collectLogs({ cwd, repos })
     const allLogs = logs.join('\n\n')
@@ -231,10 +320,12 @@ ${repoNote}
         console.error('Could not find header end marker in change-log.md')
     }
 
-    execSync(`git add change-log.md && git commit -m "chore: update changelog for v${version}"`, {
-        cwd,
-        stdio: 'inherit',
-    })
+    if (!skipCommit) {
+        execSync(`git add change-log.md change-log.*.md 2>/dev/null; git commit -m "chore: update changelog for v${version}" || true`, {
+            cwd,
+            stdio: 'inherit',
+        })
+    }
 
     return changelogEntry
 }
@@ -260,4 +351,6 @@ module.exports = {
     getChangelogEntry,
     collectLogs,
     getCommitsSinceLastBump,
+    archivePreviousYear,
+    ensureChangelog,
 }
