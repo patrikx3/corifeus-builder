@@ -6,4 +6,5 @@ module.exports = {
     "generate-tasks": require('./generate-tasks'),
     "raw-npm-angular": require('./raw-npm-angular'),
     "inject": require('./inject'),
+    "changelog": require('./changelog'),
 }

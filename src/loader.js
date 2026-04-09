@@ -43,7 +43,11 @@ class loader {
         require('./replaces')(options, pkg);
 
         grunt.config.merge(config);
-        Object.keys(task).forEach((taskItem) => task[taskItem](grunt))
+        Object.keys(task).forEach((taskItem) => {
+            if (typeof task[taskItem] === 'function') {
+                task[taskItem](grunt)
+            }
+        })
 
         grunt.registerTask('cory:kill', function () {
             process.exit(1);
