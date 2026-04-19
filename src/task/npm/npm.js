@@ -86,29 +86,30 @@ module.exports = async (pkgFile) => {
     const newPkgFile = JSON.stringify(pkg, null, 4);
     await fs.writeFile(pkgFile, newPkgFile)
 
-    // Auto-ensure .npmignore protects sensitive directories
+    // Auto-ensure .npmignore protects sensitive paths (always, whether they exist or not)
     const cwd = path.dirname(pkgFile)
     const npmignorePath = path.join(cwd, '.npmignore')
-    const protectedDirs = ['secure/', 'agents/', '.claude/', '.vscode/', '.codex/']
-    const existingDirs = []
-    for (const dir of protectedDirs) {
-        try {
-            await fs.access(require('path').join(cwd, dir.replace('/', '')))
-            existingDirs.push(dir)
-        } catch (e) {}
-    }
-    if (existingDirs.length > 0) {
-        let npmignore = ''
-        try {
-            npmignore = await fs.readFile(npmignorePath, 'utf-8')
-        } catch (e) {}
-        const missing = existingDirs.filter(dir => !npmignore.split('\n').some(line => line.trim() === dir || line.trim() === dir.replace('/', '')))
-        if (missing.length > 0) {
-            const addition = missing.join('\n')
-            npmignore = npmignore ? npmignore.trimEnd() + '\n' + addition + '\n' : addition + '\n'
-            await fs.writeFile(npmignorePath, npmignore)
-            console.log(`Auto-added to .npmignore: ${missing.join(', ')}`)
-        }
+    const protected = [
+        'secure/',
+        'agents/',
+        '.claude/',
+        '.vscode/',
+        '.codex/',
+        'CLAUDE.md',
+        'AGENTS.md',
+    ]
+    let npmignore = ''
+    try {
+        npmignore = await fs.readFile(npmignorePath, 'utf-8')
+    } catch (e) {}
+    const normalize = (s) => s.trim().replace(/^\//, '').replace(/\/$/, '')
+    const lines = npmignore.split('\n').map(normalize)
+    const missing = protected.filter(entry => !lines.includes(normalize(entry)))
+    if (missing.length > 0) {
+        const addition = missing.join('\n')
+        npmignore = npmignore ? npmignore.trimEnd() + '\n' + addition + '\n' : addition + '\n'
+        await fs.writeFile(npmignorePath, npmignore)
+        console.log(`Auto-added to .npmignore: ${missing.join(', ')}`)
     }
 
     return pkg;

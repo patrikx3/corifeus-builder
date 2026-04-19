@@ -8,3 +8,4 @@ module.exports.root = function (args) {
 
 module.exports.folder = require('./folder');
 module.exports.task = require('./task');
+module.exports.mirrorExclude = require('./mirror-exclude');

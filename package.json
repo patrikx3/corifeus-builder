@@ -1,6 +1,6 @@
 {
     "name": "corifeus-builder",
-    "version": "2026.4.139",
+    "version": "2026.4.143",
     "corifeus": {
         "icon": "fas fa-gavel",
         "code": "Make",
@@ -40,7 +40,7 @@
         "github-api": "^3.4.0",
         "glob": "^13.0.6",
         "glob-promise": "^6.0.7",
-        "grunt": "^1.6.1",
+        "grunt": "^1.6.2",
         "grunt-contrib-clean": "^2.0.1",
         "grunt-contrib-copy": "^1.0.0",
         "grunt-contrib-htmlmin": "^3.1.0",
@@ -51,7 +51,7 @@
         "mocha": "^11.7.5",
         "mz": "^2.7.0",
         "npm": "^11.12.1",
-        "npm-check-updates": "^20.0.0",
+        "npm-check-updates": "^21.0.2",
         "should": "^13.2.3",
         "time-grunt": "^2.0.0",
         "yaml": "^2.8.3"
