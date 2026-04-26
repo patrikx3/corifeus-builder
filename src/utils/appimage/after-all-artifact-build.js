@@ -118,10 +118,10 @@ module.exports = async function (context) {
     const repo = await gh.getRepo('patrikx3', pkg.corifeus.reponame)
     const result = await repo.createRelease({
         "tag_name": 'v' + pkg.version,
-        "target_commitish": "master",
+        "target_commitish": "main",
         "name": pkg.version,
         "body": `
-https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/change-log.md#v${pkg.version.replace(/\./g, '')}
+https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/main/change-log.md#v${pkg.version.replace(/\./g, '')}
 
 [![Snapcraft](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/${pkg.name}#cory-non-external)
 `,
