@@ -890,10 +890,10 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-corifeus-utils@^2026.4.130:
-  version "2026.4.130"
-  resolved "https://registry.yarnpkg.com/corifeus-utils/-/corifeus-utils-2026.4.130.tgz#64a6e85c320364128991464a5320123bdaa75435"
-  integrity sha512-wdE3cIOOeJXlKsAXaJ/UPuf1U/DFC0DKHKkh+oPRkYplyll0zNxhi9nnJ9C8z50BxZbObEOBXjwgNn+q1d7Oog==
+corifeus-utils@^2026.4.132:
+  version "2026.4.132"
+  resolved "https://registry.yarnpkg.com/corifeus-utils/-/corifeus-utils-2026.4.132.tgz#d97ad2fd88d7b0954c8efaceb27a974b93a5e12b"
+  integrity sha512-Qv/7uADw4LPsndGLmOGV66F8+p6Z4IWw9z+IFCIkJi5m6TjbG50S5l6jcMupJCXF2KqeEGJL+CbZ2qoZ3f4NKw==
   dependencies:
     fs-extra "^11.3.4"
     ms "^2.1.3"
